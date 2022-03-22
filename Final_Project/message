@@ -1,0 +1,48 @@
+클라이언트 메세지 서비스 구축#
+ - 쪽지 발송  (여러명에게 동시 발송? 첨부파일 가능?)
+ - 받은 쪽지함 (메세지함 들어가기전에도 안읽은 메세지가 있는지 확인 가능)
+   (목록 / 상세)
+ - 보낸 쪽지함 (상대방이 읽었는지 아닌지 확인 가능)
+   (목록 / 상세)
+ - 미확인만 삭제 가능  
+ - 쪽지확인뷰에서 상대방에게 답장
+ - 전달하기 
+
+ DATA_TABLE
+  고유번호, 받는사람,  보낸사람, 쪽지내용, 보낸날짜,   첨부파일,  받은날짜,  
+  1         시안       민규      안녕      2022/03/18  null       2022/03/19 
+
+MessageService  ==> 기능
+  -  받은쪽지목록 가져오기 (아이디 ==> 리스트)
+       : SELECT * FROM MESSAGE WHERE RECIPIENT = #{id}
+  -  보낸쪽지목록 가져오기 (아이디 ==> 리스트)
+  -  쪽지 보내기 (VO  --> boolean)
+       : INSERT
+  -  여러명 보내기 ([]Vo  --> booelan)
+  -  쪽지 상세정보 가져오기 (고유번호 ==> Vo)
+       : SELECT * FRMO MESSAGE WHERE NO = #{no} 
+     (받은 날짜 업데이트 ?? if 보낸쪽지함에서 확인 하는거면?? )
+       : UPDATE MESSAGE SET READDATE=SYSDATE WHERE NO=#{no}
+  -  쪽지 삭제하기 (고유번호[] ==> boolean) 
+       : DELETE FROM MESSAGE WHERE NO IN
+         <foreach collections="array" open="(" close=")" seperator="," item="no">
+            #{no} 
+         </foreach>
+  -  안읽은 쪽지 개수 알려주기   (ID---> int)
+       : SELECT COUNT(*) FROM MESSAGE WHERE READDATE IS NULL AND RECIPIENT = #{id} 
+
+  -  답장 보내기 
+
+
+      
+
+============================================================
+로그인 상태에서 쪽지받게 됬을때 알람 / 웹소켓
+
+
+
+- 쪽지 쓰기 (db에 views에 만든 폼을 통해 insert 해야 한다)
+-> contoller에서 views로 명령을 내려야함 어떻게? service를 통해서 어떤 서비스? (쪽지쓰기 버튼 클릭시) model에 
+  
+
+ 
