@@ -29,4 +29,6 @@ public class FreeBoardController {
 		
 		return "freeboard/view";
 	}
+	
+	
 }

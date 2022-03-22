@@ -3,6 +3,8 @@ package net.edupoll.kr;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +31,11 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
+	}
+	
+	@Scheduled(fixedDelay = 10000)
+	public void testScheduled() {
+		System.out.println("...............");
 	}
 	
 }

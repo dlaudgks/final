@@ -4,15 +4,17 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import net.edupoll.kr.entity.FreeBoardVo;
+
 @Repository
 public class FreeboardDao {
 
 	@Autowired
 	SqlSession sqlSession;
 	
-	public String InsertOne() {
+	public int InsertOne(FreeBoardVo vo) {
 		
-		return "";
+		return sqlSession.insert("");
 	}
 	
 }

@@ -34,7 +34,7 @@ a:link {
 		<h2>자유게시판 | <small>글쓰기</small></h2>
 		<a href="list">글목록</a>
 	</div>
-	<form method="post">
+	<form method="post" action="/">
 	<div>
 		<input type="text" placeholder="글제목" />
 	</div>
