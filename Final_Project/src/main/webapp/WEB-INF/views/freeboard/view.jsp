@@ -23,7 +23,7 @@
 			자유게시판 | <small>글보기</small>
 		</h2>
 		<p>
-			<a href="list">글목록</a><a href="insert">글작성</a>
+			<a href="list">글목록</a> &nbsp &nbsp &nbsp<a href="insert">글작성</a>
 		</p>
 		<div>
 			<h4>${one.title }</h4>

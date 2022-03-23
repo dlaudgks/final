@@ -61,15 +61,18 @@
 		</websocket:handshake-interceptors>
 	</websocket:handlers>
 	
+	<!-- 
 	<bean id="SimpleTask" class="net.edupoll.kr.task.SimpleTask"></bean>
 	<task:scheduler id="finalScheduler" pool-size="10"/>
-	
+	 -->
+	<!-- 
 	<task:scheduled-tasks scheduler="finalScheduler">
 	<task:scheduled ref="SimpleTask" method="printLog" fixed-rate="5000"  />
 	<task:scheduled ref="SimpleTask" method="printAnyThing" cron="0 * 14 * * *" />
 	</task:scheduled-tasks>
 
 	<task:annotation-driven/>
+	 -->
 	
 </beans>
 

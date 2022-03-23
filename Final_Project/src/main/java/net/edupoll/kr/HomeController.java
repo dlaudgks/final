@@ -33,9 +33,11 @@ public class HomeController {
 		return "home";
 	}
 	
+	/*
 	@Scheduled(fixedDelay = 10000)
 	public void testScheduled() {
 		System.out.println("...............");
 	}
+	*/
 	
 }

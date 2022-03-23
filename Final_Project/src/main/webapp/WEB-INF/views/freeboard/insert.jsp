@@ -34,16 +34,15 @@ a:link {
 		<h2>자유게시판 | <small>글쓰기</small></h2>
 		<a href="list">글목록</a>
 	</div>
-	<form method="post" action="/">
+	<form method="post" action="/freeboard/insert">
 	<div>
 		<input type="text" placeholder="글제목" />
 	</div>
-	<div style="margin-top: 10px;">
+	<div style="margin-top: 5px;">
 		<textarea rows="10" cols="20" name="content" placeholder="글내용"></textarea>
 	</div>
-	<div>
+	<div style="margin-top: 5px;">
 	<button type="submit">등록</button>
-	<button type="button">취소</button>
 	</div>
 	</form>
 </div>
